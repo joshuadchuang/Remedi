@@ -11,6 +11,13 @@
 		D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72DEF2AEC905000FC0E7C /* ContentView.swift */; };
 		D9E72DF22AEC905100FC0E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E72DF12AEC905100FC0E7C /* Assets.xcassets */; };
 		D9E72DF52AEC905100FC0E7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E72DF42AEC905100FC0E7C /* Preview Assets.xcassets */; };
+		D9E72DFD2AEC945B00FC0E7C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72DFC2AEC945B00FC0E7C /* OnboardingView.swift */; };
+		D9E72DFF2AEC948700FC0E7C /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72DFE2AEC948700FC0E7C /* HomePageView.swift */; };
+		D9E72E012AEC949200FC0E7C /* MedicationInputFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E002AEC949200FC0E7C /* MedicationInputFormView.swift */; };
+		D9E72E032AEC949D00FC0E7C /* MedicationListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E022AEC949D00FC0E7C /* MedicationListPageView.swift */; };
+		D9E72E052AEC94A900FC0E7C /* MedicationDetailsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E042AEC94A900FC0E7C /* MedicationDetailsPageView.swift */; };
+		D9E72E072AEC94B200FC0E7C /* CalendarTrackerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E062AEC94B200FC0E7C /* CalendarTrackerPageView.swift */; };
+		D9E72E092AEC94C000FC0E7C /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E082AEC94C000FC0E7C /* SettingsPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		D9E72DEF2AEC905000FC0E7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9E72DF12AEC905100FC0E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E72DF42AEC905100FC0E7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9E72DFC2AEC945B00FC0E7C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		D9E72DFE2AEC948700FC0E7C /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		D9E72E002AEC949200FC0E7C /* MedicationInputFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationInputFormView.swift; sourceTree = "<group>"; };
+		D9E72E022AEC949D00FC0E7C /* MedicationListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationListPageView.swift; sourceTree = "<group>"; };
+		D9E72E042AEC94A900FC0E7C /* MedicationDetailsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailsPageView.swift; sourceTree = "<group>"; };
+		D9E72E062AEC94B200FC0E7C /* CalendarTrackerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTrackerPageView.swift; sourceTree = "<group>"; };
+		D9E72E082AEC94C000FC0E7C /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,13 @@
 				D9E72DEF2AEC905000FC0E7C /* ContentView.swift */,
 				D9E72DF12AEC905100FC0E7C /* Assets.xcassets */,
 				D9E72DF32AEC905100FC0E7C /* Preview Content */,
+				D9E72DFC2AEC945B00FC0E7C /* OnboardingView.swift */,
+				D9E72DFE2AEC948700FC0E7C /* HomePageView.swift */,
+				D9E72E002AEC949200FC0E7C /* MedicationInputFormView.swift */,
+				D9E72E022AEC949D00FC0E7C /* MedicationListPageView.swift */,
+				D9E72E042AEC94A900FC0E7C /* MedicationDetailsPageView.swift */,
+				D9E72E062AEC94B200FC0E7C /* CalendarTrackerPageView.swift */,
+				D9E72E082AEC94C000FC0E7C /* SettingsPageView.swift */,
 			);
 			path = RemediApp;
 			sourceTree = "<group>";
@@ -137,7 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E72DFD2AEC945B00FC0E7C /* OnboardingView.swift in Sources */,
 				D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */,
+				D9E72DFF2AEC948700FC0E7C /* HomePageView.swift in Sources */,
+				D9E72E012AEC949200FC0E7C /* MedicationInputFormView.swift in Sources */,
+				D9E72E032AEC949D00FC0E7C /* MedicationListPageView.swift in Sources */,
+				D9E72E092AEC94C000FC0E7C /* SettingsPageView.swift in Sources */,
+				D9E72E052AEC94A900FC0E7C /* MedicationDetailsPageView.swift in Sources */,
+				D9E72E072AEC94B200FC0E7C /* CalendarTrackerPageView.swift in Sources */,
 				D9E72DEE2AEC905000FC0E7C /* RemediAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
