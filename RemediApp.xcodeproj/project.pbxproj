@@ -18,6 +18,8 @@
 		D9E72E052AEC94A900FC0E7C /* MedicationDetailsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E042AEC94A900FC0E7C /* MedicationDetailsPageView.swift */; };
 		D9E72E072AEC94B200FC0E7C /* CalendarTrackerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E062AEC94B200FC0E7C /* CalendarTrackerPageView.swift */; };
 		D9E72E092AEC94C000FC0E7C /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E082AEC94C000FC0E7C /* SettingsPageView.swift */; };
+		D9E72E142AED765200FC0E7C /* UserHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E132AED765200FC0E7C /* UserHomeView.swift */; };
+		D9E72E162AED767C00FC0E7C /* CaretakerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E152AED767C00FC0E7C /* CaretakerHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		D9E72E042AEC94A900FC0E7C /* MedicationDetailsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailsPageView.swift; sourceTree = "<group>"; };
 		D9E72E062AEC94B200FC0E7C /* CalendarTrackerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTrackerPageView.swift; sourceTree = "<group>"; };
 		D9E72E082AEC94C000FC0E7C /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
+		D9E72E132AED765200FC0E7C /* UserHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeView.swift; sourceTree = "<group>"; };
+		D9E72E152AED767C00FC0E7C /* CaretakerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretakerHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,8 @@
 		D9E72DEC2AEC905000FC0E7C /* RemediApp */ = {
 			isa = PBXGroup;
 			children = (
+				D9E72E122AED762000FC0E7C /* User Interface */,
 				D9E72DED2AEC905000FC0E7C /* RemediAppApp.swift */,
-				D9E72DEF2AEC905000FC0E7C /* ContentView.swift */,
 				D9E72DF12AEC905100FC0E7C /* Assets.xcassets */,
 				D9E72DF32AEC905100FC0E7C /* Preview Content */,
 				D9E72DFC2AEC945B00FC0E7C /* OnboardingView.swift */,
@@ -86,6 +90,16 @@
 				D9E72DF42AEC905100FC0E7C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9E72E122AED762000FC0E7C /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D9E72DEF2AEC905000FC0E7C /* ContentView.swift */,
+				D9E72E132AED765200FC0E7C /* UserHomeView.swift */,
+				D9E72E152AED767C00FC0E7C /* CaretakerHomeView.swift */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E72E142AED765200FC0E7C /* UserHomeView.swift in Sources */,
+				D9E72E162AED767C00FC0E7C /* CaretakerHomeView.swift in Sources */,
 				D9E72DFD2AEC945B00FC0E7C /* OnboardingView.swift in Sources */,
 				D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */,
 				D9E72DFF2AEC948700FC0E7C /* HomePageView.swift in Sources */,
