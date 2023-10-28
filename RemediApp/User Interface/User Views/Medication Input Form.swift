@@ -11,6 +11,8 @@ struct MedicationInputForm: View {
     @State private var medicationName = ""
     @State private var medicationDosage = ""
     @State private var medicationTime = Date()
+    
+    @StateObject var viewModel = AppViewModel()
 
     var body: some View {
         NavigationView {
@@ -21,24 +23,38 @@ struct MedicationInputForm: View {
                     DatePicker("Time", selection: $medicationTime, displayedComponents: .hourAndMinute)
                 }
 
-                Button("Save") {
+                /*Button("Save") {
                     // Create a Medication object with user input
                     let newMedication = Medication(
                         id: UUID(),
                         name: medicationName,
                         time: medicationTime,
                         dosage: medicationDosage
-                    )
+                    )*/
+                    
+                NavigationLink(destination: AddMedicationView().environmentObject(viewModel)) {
+                    Text("Save")
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+                
+                let newMedication = Medication(
+                    id: UUID(),
+                    name: medicationName,
+                    time: medicationTime,
+                    dosage: medicationDosage)
 
                     // Handle the newMedication object (e.g., save to database)
                     // You can replace this with your backend logic.
-                    print("New Medication:", newMedication)
+                    //print("New Medication:", newMedication)
                 }
             }
             .navigationTitle("Add Medication")
         }
     }
-}
 
 struct MedicationInputForm_Previews: PreviewProvider {
     static var previews: some View {
