@@ -87,6 +87,12 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 
-#Preview {
-    CamInputForm()
+//#Preview {
+//    CamInputForm()
+//}
+
+struct CamInputForm_Previews: PreviewProvider {
+    static var previews: some View {
+        CamInputForm()
+    }
 }
