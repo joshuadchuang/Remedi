@@ -26,9 +26,8 @@ struct ListMedicationView: View {
     }
 }
 
-
 struct ListMedicationView_Previews: PreviewProvider {
     static var previews: some View {
-        ListMedicationView()
+        ListMedicationView().environmentObject(AppViewModel())
     }
 }
