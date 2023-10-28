@@ -15,7 +15,6 @@ struct MedicationInputForm: View {
     @StateObject var viewModel = AppViewModel()
 
     var body: some View {
-        NavigationView {
             Form {
                 Section(header: Text("Medication Details")) {
                     TextField("Medication Name", text: $medicationName)
@@ -52,8 +51,6 @@ struct MedicationInputForm: View {
                     //print("New Medication:", newMedication)
                 }
             }
-            .navigationTitle("Add Medication")
-        }
     }
 
 struct MedicationInputForm_Previews: PreviewProvider {

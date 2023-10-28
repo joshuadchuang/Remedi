@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct CamInputForm: View {
+    @EnvironmentObject var viewModel: AppViewModel
     @State private var image: UIImage?
     @State private var showCameraPicker = false
     @State private var showLibraryPicker = false
     
     var body: some View {
         VStack {
+            if let image = image {
+                Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+            }
             Button(action: { self.showCameraPicker.toggle() }) {
                 HStack {
                     Image(systemName: "camera")
@@ -62,11 +68,15 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-            }
-            
-            parent.presentationMode.wrappedValue.dismiss()
+                    if let uiImage = info[.originalImage] as? UIImage {
+                        parent.image = uiImage
+                    }
+                    
+                    parent.presentationMode.wrappedValue.dismiss()
+                }
+                
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+                parent.presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -93,6 +103,6 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 struct CamInputForm_Previews: PreviewProvider {
     static var previews: some View {
-        CamInputForm()
+        CamInputForm().environmentObject(AppViewModel())
     }
 }

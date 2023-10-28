@@ -29,7 +29,7 @@ struct UserHomeView: View {
                     }
                 }
                 
-                NavigationLink(destination: AddMedicationView()) {
+                NavigationLink(destination: AddMedicationView().environmentObject(viewModel)) {
                     AddMedicationBlock()
                 }
             }

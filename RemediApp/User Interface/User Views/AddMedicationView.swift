@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct AddMedicationView: View {
-    @StateObject var viewModel = AppViewModel()
+    @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
-        NavigationView {
             VStack {
                 Text("Add a Medication")
                     .font(.largeTitle)
@@ -31,7 +30,7 @@ struct AddMedicationView: View {
                         .padding(.horizontal)
                 }
                 
-                NavigationLink(destination: CamInputForm()) {
+                NavigationLink(destination: CamInputForm().environmentObject(viewModel)) {
                     Text("Camera Input")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, maxHeight: 50)
@@ -42,12 +41,11 @@ struct AddMedicationView: View {
                 
                 Spacer()
             }
-        }
     }
 }
 
 struct AddMedicationView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMedicationView()
+        AddMedicationView().environmentObject(AppViewModel())
     }
 }
