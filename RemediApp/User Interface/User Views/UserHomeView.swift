@@ -24,15 +24,9 @@ struct UserHomeView: View {
 
             ScrollView {
                 ForEach(medications.filter { $0.time >= Date() }) { medication in
-                    Button(action: {
-                        viewModel.selectedMedication = medication
-                    }) {
+                    NavigationLink(destination: MedicationInfoView(medication: medication).environmentObject(viewModel)) {
                         MedicationView(medication: medication)
                     }
-                    .buttonStyle(PlainButtonStyle()) // Removes the default button style
-                    .background(
-                        NavigationLink("", destination: MedicationInfoView(medication: medication).environmentObject(viewModel))
-                    )
                 }
                 
                 NavigationLink(destination: AddMedicationView()) {
