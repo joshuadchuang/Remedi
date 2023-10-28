@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = AppViewModel()
+
     var body: some View {
         NavigationView {
             VStack {
@@ -20,7 +22,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: UserHomeView()) {
+                NavigationLink(destination: UserHomeView().environmentObject(viewModel)) {
                     Text("I am the User")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, maxHeight: 50)
@@ -49,4 +51,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

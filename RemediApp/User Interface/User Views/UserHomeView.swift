@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct UserHomeView: View {
+    @EnvironmentObject var viewModel: AppViewModel
+
     @State private var medications = [
         Medication(name: "Aspirin", time: Calendar.current.date(bySettingHour: 13, minute: 30, second: 0, of: Date())!, dosage: "2 pills"),
-        Medication(name: "Vitamin C", time: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, dosage: "1 pill")
+        Medication(name: "Vitamin C", time: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, dosage: "1 pill"),
+        Medication(name: "Ibuprofen", time: Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!, dosage: "1 pill")
     ]
 
     var body: some View {
@@ -19,14 +22,21 @@ struct UserHomeView: View {
                 .font(.headline)
                 .padding()
 
-            List {
-                ForEach(medications) { medication in
-                    MedicationView(medication: medication)
+            ScrollView {
+                ForEach(medications.filter { $0.time >= Date() }) { medication in
+                    Button(action: {
+                        viewModel.selectedMedication = medication
+                    }) {
+                        MedicationView(medication: medication)
+                    }
+                    .buttonStyle(PlainButtonStyle()) // Removes the default button style
+                    .background(
+                        NavigationLink("", destination: MedicationInfoView(medication: medication).environmentObject(viewModel))
+                    )
                 }
                 
                 NavigationLink(destination: AddMedicationView()) {
-                    Text("Add Medication")
-                        .foregroundColor(.blue)
+                    AddMedicationBlock()
                 }
             }
             
@@ -64,41 +74,8 @@ struct UserHomeView: View {
     }
 }
 
-struct MedicationView: View {
-    var medication: Medication
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(medication.timeFormatted)
-                    .font(.system(size: 24))
-                    .frame(width: 100, alignment: .leading)
-                
-                Spacer()
-            }
-            
-            VStack(alignment: .trailing) {
-                Text(medication.name)
-                    .font(.headline)
-                    .frame(width: 100, alignment: .trailing)
-                
-                Spacer()
-            }
-            
-            VStack {
-                Text(medication.dosage)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
-            }
-        }
-        .frame(height: 100)
-        .padding()
-    }
-}
-
 struct UserHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        UserHomeView()
+        UserHomeView().environmentObject(AppViewModel())
     }
 }

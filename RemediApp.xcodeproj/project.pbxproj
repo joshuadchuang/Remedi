@@ -20,6 +20,10 @@
 		D9E72E1C2AED7A3D00FC0E7C /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E1B2AED7A3D00FC0E7C /* AddMedicationView.swift */; };
 		D9E72E1E2AED7A5300FC0E7C /* ListMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E1D2AED7A5300FC0E7C /* ListMedicationView.swift */; };
 		D9E72E202AED7A5D00FC0E7C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E1F2AED7A5D00FC0E7C /* ProfileView.swift */; };
+		D9E72E222AED7D6F00FC0E7C /* MedicationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E212AED7D6F00FC0E7C /* MedicationInfoView.swift */; };
+		D9E72E242AED7DD900FC0E7C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E232AED7DD900FC0E7C /* AppViewModel.swift */; };
+		D9E72E262AED7F8E00FC0E7C /* MedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E252AED7F8E00FC0E7C /* MedicationView.swift */; };
+		D9E72E2A2AED810500FC0E7C /* AddMedicationBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E292AED810500FC0E7C /* AddMedicationBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		D9E72E1B2AED7A3D00FC0E7C /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
 		D9E72E1D2AED7A5300FC0E7C /* ListMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMedicationView.swift; sourceTree = "<group>"; };
 		D9E72E1F2AED7A5D00FC0E7C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D9E72E212AED7D6F00FC0E7C /* MedicationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationInfoView.swift; sourceTree = "<group>"; };
+		D9E72E232AED7DD900FC0E7C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		D9E72E252AED7F8E00FC0E7C /* MedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationView.swift; sourceTree = "<group>"; };
+		D9E72E292AED810500FC0E7C /* AddMedicationBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				D9E72E1B2AED7A3D00FC0E7C /* AddMedicationView.swift */,
 				D9E72E1D2AED7A5300FC0E7C /* ListMedicationView.swift */,
 				D9E72E1F2AED7A5D00FC0E7C /* ProfileView.swift */,
+				D9E72E212AED7D6F00FC0E7C /* MedicationInfoView.swift */,
+				D9E72E232AED7DD900FC0E7C /* AppViewModel.swift */,
+				D9E72E252AED7F8E00FC0E7C /* MedicationView.swift */,
+				D9E72E292AED810500FC0E7C /* AddMedicationBlock.swift */,
 			);
 			path = "User Views";
 			sourceTree = "<group>";
@@ -188,9 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E72E2A2AED810500FC0E7C /* AddMedicationBlock.swift in Sources */,
 				D9E72E142AED765200FC0E7C /* UserHomeView.swift in Sources */,
 				D9E72E162AED767C00FC0E7C /* CaretakerHomeView.swift in Sources */,
 				D9E72E1C2AED7A3D00FC0E7C /* AddMedicationView.swift in Sources */,
+				D9E72E242AED7DD900FC0E7C /* AppViewModel.swift in Sources */,
 				D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */,
 				D9E72E182AED79A000FC0E7C /* Medication.swift in Sources */,
 				D9E72E1E2AED7A5300FC0E7C /* ListMedicationView.swift in Sources */,
@@ -199,6 +213,8 @@
 				D9E72E052AEC94A900FC0E7C /* MedicationDetailsPage.swift in Sources */,
 				D9E72E202AED7A5D00FC0E7C /* ProfileView.swift in Sources */,
 				D9E72DEE2AEC905000FC0E7C /* RemediAppApp.swift in Sources */,
+				D9E72E222AED7D6F00FC0E7C /* MedicationInfoView.swift in Sources */,
+				D9E72E262AED7F8E00FC0E7C /* MedicationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
