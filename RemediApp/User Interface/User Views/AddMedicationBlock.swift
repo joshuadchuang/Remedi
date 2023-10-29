@@ -13,10 +13,10 @@ struct AddMedicationBlock: View {
             Image(systemName: "plus.circle.fill")
                 .resizable()
                 .frame(width: 50, height: 50)
-                .foregroundColor(.blue)
+                .foregroundStyle(Color.white)
             Text("Add Medication")
                 .font(.headline)
-                .foregroundColor(.blue)
+                .foregroundStyle(Color.white)
         }
         .padding()
         .background(Color.gray.opacity(0.2))

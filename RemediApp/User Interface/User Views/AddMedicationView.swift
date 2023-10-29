@@ -11,36 +11,48 @@ struct AddMedicationView: View {
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
-            VStack {
-                Text("Add a Medication")
-                    .font(.largeTitle)
-                    .padding()
-                
-                Text("Choose to input information yourself (manually), or take a picture of the prescription")
-                    .padding()
-                
-                Spacer()
-                
-                NavigationLink(destination: MedicationInputForm().environmentObject(viewModel)) {
-                    Text("Manual Input")
+        ZStack {
+            BackgroundView()
+                VStack {
+                    Text("Add a Medication")
+                        .font(.largeTitle)
                         .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                
-                NavigationLink(destination: CamInputForm().environmentObject(viewModel)) {
-                    Text("Camera Input")
+                        .padding()
+                    
+                    Text("Choose to input information yourself (manually), or take a picture of the prescription")
                         .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                
+                        .padding()
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: MedicationInputForm().environmentObject(viewModel)) {
+                        Text("Manual Input")
+                            .font(.system(size: 20, weight: .medium, design: .default))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 280, maxHeight: 50)
+                            .background(LinearGradient(gradient:
+                                Gradient(colors: [Color("OceanBlue"), Color("Green")]),
+                                startPoint: .topLeading,
+                                endPoint:.bottomTrailing))
+                            .cornerRadius(10)
+                            .padding()
+                    }
+                    
+                    NavigationLink(destination: CamInputForm().environmentObject(viewModel)) {
+                        Text("Camera Input")
+                            .font(.system(size: 20, weight: .medium, design: .default))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 280, maxHeight: 50)
+                            .background(LinearGradient(gradient:
+                                Gradient(colors: [Color("OceanBlue"), Color("Green")]),
+                                startPoint: .topLeading,
+                                endPoint:.bottomTrailing))
+                            .cornerRadius(10)
+                    }
+                    
                 Spacer()
             }
+        }
     }
 }
 

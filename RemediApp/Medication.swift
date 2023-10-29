@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Medication: Identifiable {
     var id = UUID()

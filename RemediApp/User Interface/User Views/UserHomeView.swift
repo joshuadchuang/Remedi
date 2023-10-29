@@ -17,49 +17,69 @@ struct UserHomeView: View {
     ]
 
     var body: some View {
-        VStack {
-            Text("Today's Date: \(formatDate(Date()))")
-                .font(.headline)
-                .padding()
-
-            ScrollView {
-                ForEach(medications.filter { $0.time >= Date() }) { medication in
-                    NavigationLink(destination: MedicationInfoView(medication: medication).environmentObject(viewModel)) {
-                        MedicationView(medication: medication)
-                    }
-                }
+        ZStack {
+            BackgroundView()
+            VStack {
+                Text("Today's Date: \(formatDate(Date()))")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .padding()
                 
-                NavigationLink(destination: AddMedicationView().environmentObject(viewModel)) {
-                    AddMedicationBlock()
-                }
-            }
-            
-            Spacer()
-            
-            HStack {
-                NavigationLink(destination: ListMedicationView()) {
-                    Circle()
-                        .frame(width: 50, height: 50)
-                        .overlay(Image(systemName: "list.bullet"))
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(25)
+                ScrollView {
+                    ForEach(medications.filter { $0.time >= Date() }) { medication in
+                        NavigationLink(destination: MedicationInfoView(medication: medication).environmentObject(viewModel)) {
+                            MedicationView(medication: medication)
+                        }
+                    }
+                    
+                    
                 }
                 
                 Spacer()
                 
-                NavigationLink(destination: ProfileView()) {
-                    Circle()
-                        .frame(width: 50, height: 50)
-                        .overlay(Image(systemName: "person.crop.circle"))
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(25)
+                HStack {
+                    
+                    NavigationLink(destination: ListMedicationView()) {
+                        Rectangle()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(15)
+                            .overlay(Image(systemName: "list.bullet")
+                                .resizable()
+                                .foregroundStyle(LinearGradient(gradient:
+                                    Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                                    startPoint: .topLeading,
+                                    endPoint:.bottomTrailing))
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40))
+                            
+                    }
+                    
+                    NavigationLink(destination: AddMedicationView().environmentObject(viewModel)) {
+                        AddMedicationBlock()
+                    }
+                    
+                    NavigationLink(destination: ProfileView()) {
+                        Rectangle()
+                            .frame(width: 75, height: 75)
+                            .foregroundColor(.white)
+                            .background(Color.blue)
+                            .cornerRadius(15)
+                            .overlay(Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .foregroundStyle(LinearGradient(gradient:
+                                    Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                                    startPoint: .topLeading,
+                                    endPoint:.bottomTrailing))
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40))
+                    }
                 }
-            }
             .padding()
         }
     }
+}
     
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()

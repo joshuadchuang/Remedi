@@ -15,12 +15,15 @@ struct ListMedicationView: View {
     ]
 
     var body: some View {
-        ScrollView {
-            ForEach(medications) { medication in
-                NavigationLink(destination: MedicationInfoView(medication: medication)) {
-                    MedicationView(medication: medication)
+        ZStack {
+            BackgroundView()
+            ScrollView {
+                ForEach(medications) { medication in
+                    NavigationLink(destination: MedicationInfoView(medication: medication)) {
+                        MedicationView(medication: medication)
+                    }
+                    .buttonStyle(PlainButtonStyle()) // Removes the default button style
                 }
-                .buttonStyle(PlainButtonStyle()) // Removes the default button style
             }
         }
     }
