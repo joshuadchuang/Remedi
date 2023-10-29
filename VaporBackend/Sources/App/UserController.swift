@@ -10,30 +10,48 @@ import Vapor
 
 final class UserController {
     func createUser(req: Request) async throws -> User {
-        let user = try req.content.decode(User.self)
-        let filePath = "Users/\(user.uniqueCode).json"
+        do {
+            let user = try req.content.decode(User.self)
+            let filePath = "Users/\(user.uniqueCode).json"
 
-        // Check if file exists
-        if !FileManager.default.fileExists(atPath: filePath) {
-            // Create file
-            FileManager.default.createFile(atPath: filePath, contents: nil)
+            // Check if file exists
+            if !FileManager.default.fileExists(atPath: filePath) {
+                // Create file
+                FileManager.default.createFile(atPath: filePath, contents: nil)
+            }
+
+            // Write user data to file
+            let jsonData = try JSONEncoder().encode(user)
+            
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                        // Log the JSON string
+                        print("JSON String: \(jsonString)")
+                    } else {
+                        throw Abort(.internalServerError, reason: "Failed to convert JSON data to string")
+                    }
+            
+            try jsonData.write(to: URL(fileURLWithPath: filePath))
+
+            // Return a success response with the newly created user
+            return user
+        } catch {
+            // Handle decoding or file-related errors
+            throw Abort(.internalServerError, reason: "Failed to create user: \(error)")
         }
-
-        // Write user data to file
-        let data = try JSONEncoder().encode(user)
-        try data.write(to: URL(fileURLWithPath: filePath))
-        
-        return user
     }
 
+
     func getUser(req: Request) async throws -> User {
-            let workingDirectory = req.application.directory.workingDirectory
+        
+            req.logger.info("starting thingy")
         
             guard let uniqueCode = req.parameters.get("uniqueCode") else {
                 throw Abort(.badRequest, reason: "uniqueCode not found in parameters")
             }
             
-            let filePath = "\(workingDirectory)Users/\(uniqueCode).json"
+            let filePath = "Users/\(uniqueCode).json"
+        
+            req.logger.info("File Path: \(filePath)")
 
             // Check if file exists
             guard FileManager.default.fileExists(atPath: filePath) else {
@@ -42,7 +60,8 @@ final class UserController {
 
             // Read user data from file
             do {
-                let data = try Data()
+                
+                let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
                 let user = try JSONDecoder().decode(User.self, from: data)
                 return user
             } catch {
