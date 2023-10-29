@@ -14,7 +14,7 @@ struct MedicationInputForm: View {
     
     @StateObject var viewModel = AppViewModel()
 
-    var body: some View {
+    /*var body: some View {
             Form {
                 Section(header: Text("Medication Details")) {
                     TextField("Medication Name", text: $medicationName)
@@ -50,7 +50,41 @@ struct MedicationInputForm: View {
                     // You can replace this with your backend logic.
                     //print("New Medication:", newMedication)
                 }
+            }*/
+    var body: some View {
+        Form {
+            Section(header: Text("Medication Details")) {
+                TextField("Medication Name", text: $medicationName)
+                TextField("Dosage", text: $medicationDosage)
+                DatePicker("Time", selection: $medicationTime, displayedComponents: .hourAndMinute)
             }
+            
+            Button(action: {
+                // Create a Medication object with user input
+                let newMedication = Medication(
+                    id: UUID(),
+                    name: medicationName,
+                    time: medicationTime,
+                    dosage: medicationDosage,
+                    startDate: Date(), // You can set the start date as needed
+                    frequencyPerDay: 1, // Set the frequency per day as needed
+                    duration: 7 // Set the duration in days as needed
+                )
+                
+                // Handle the newMedication object (e.g., save to database)
+                // You can replace this with your backend logic.
+                print("New Medication:", newMedication)
+            }) {
+                Text("Save")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+            }
+        }
+    }
+
     }
 
 struct MedicationInputForm_Previews: PreviewProvider {

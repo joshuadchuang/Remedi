@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Medication: Identifiable {
+struct Medication: Identifiable, Codable {
     var id = UUID()
     var name: String
     var time: Date
@@ -16,10 +16,4 @@ struct Medication: Identifiable {
     var startDate: Date
     var frequencyPerDay: Int
     var duration: Int // in days
-
-    var timeFormatted: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        return formatter.string(from: time)
-    }
 }

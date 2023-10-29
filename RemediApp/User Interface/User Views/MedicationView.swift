@@ -13,16 +13,12 @@ struct MedicationView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(medication.timeFormatted)
+                Text(medication.name)
                     .font(.system(size: 24))
                     .frame(width: 100, alignment: .leading)
-                
-                Text(medication.name)
-                    .font(.headline)
-                    .frame(width: 100, alignment: .trailing)
             }
             
-            Text(medication.dosage)
+            Text("Dosage: \(medication.dosage)")
                 .multilineTextAlignment(.center)
         }
         .padding()
@@ -35,6 +31,7 @@ struct MedicationView: View {
 
 struct MedicationView_Previews: PreviewProvider {
     static var previews: some View {
-        MedicationView(medication: Medication(name: "Aspirin", time: Date(), dosage: "2 pills"))
+        MedicationView(medication: Medication(name: "Medicine Name", time: Date(), dosage: "2 pills", startDate: Date(), frequencyPerDay: 2, duration: 7))
     }
 }
+

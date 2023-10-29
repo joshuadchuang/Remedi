@@ -11,9 +11,10 @@ struct UserHomeView: View {
     @EnvironmentObject var viewModel: AppViewModel
 
     @State private var medications = [
-        Medication(name: "Aspirin", time: Calendar.current.date(bySettingHour: 13, minute: 30, second: 0, of: Date())!, dosage: "2 pills"),
-        Medication(name: "Vitamin C", time: Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!, dosage: "1 pill"),
-        Medication(name: "Ibuprofen", time: Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!, dosage: "1 pill")
+        Medication(name: "Aspirin", time: Date(), dosage: "2 pills", startDate: Date(), frequencyPerDay: 1, duration: 7),
+        Medication(name: "Vitamin C", time: Date(), dosage: "1 pill", startDate: Date(), frequencyPerDay: 1, duration: 30),
+        Medication(name: "Ibuprofen", time: Date(), dosage: "1 pill", startDate: Date(), frequencyPerDay: 1, duration: 14)
+
     ]
 
     var body: some View {
@@ -27,13 +28,15 @@ struct UserHomeView: View {
                 
                 ScrollView {
                     ForEach(medications.filter { $0.time >= Date() }) { medication in
-                        NavigationLink(destination: MedicationInfoView(medication: medication).environmentObject(viewModel)) {
+                        NavigationLink(destination: MedicationInfoView(medication: medication)) {
                             MedicationView(medication: medication)
                         }
                     }
-                    
-                    
                 }
+
+
+
+
                 
                 Spacer()
                 

@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct UserViewTest: View {
     @State private var uniqueCode: String = ""
+    @State private var userUniqueCode: String = ""
 
     var body: some View {
         VStack {
@@ -17,18 +20,37 @@ struct UserViewTest: View {
                 .padding()
 
             Button("Get Unique Code") {
-                // Send a GET request here to fetch the user's data.
-                // You can use URLSession or a networking library to make the request.
-
-                // For this example, we'll simulate a user object.
-                let user = User(uniqueCode: "123456", )
-                self.uniqueCode = user.uniqueCode
+                // Send a GET request to the Vapor backend
+                fetchUserUniqueCode()
             }
             .padding()
 
-            Text("User's Unique Code: \(uniqueCode)")
+            Text("User's Unique Code: \(userUniqueCode)")
                 .padding()
         }
+    }
+
+    func fetchUserUniqueCode() {
+        guard let url = URL(string: "https://yourvaporbackend.com/api/user/\(uniqueCode)") else {
+            // Handle URL creation error
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                // Handle network error
+                print("Error: \(error)")
+            } else if let data = data {
+                do {
+                    let user = try JSONDecoder().decode(User.self, from: data)
+                    // Assuming you receive a User object from the server
+                    userUniqueCode = user.uniqueCode
+                } catch {
+                    // Handle decoding error
+                    print("Decoding Error: \(error)")
+                }
+            }
+        }.resume()
     }
 }
 
@@ -37,5 +59,6 @@ struct UserViewTest_Previews: PreviewProvider {
         UserViewTest()
     }
 }
+
 
 

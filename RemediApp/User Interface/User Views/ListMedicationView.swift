@@ -10,8 +10,11 @@ import SwiftUI
 struct ListMedicationView: View {
     
     @State private var medications = [
-        getAllMedications()
-]
+        Medication(name: "Aspirin", time: Date(), dosage: "2 pills", startDate: Date(), frequencyPerDay: 1, duration: 7),
+        Medication(name: "Vitamin C", time: Date(), dosage: "1 pill", startDate: Date(), frequencyPerDay: 1, duration: 30),
+        Medication(name: "Ibuprofen", time: Date(), dosage: "1 pill", startDate: Date(), frequencyPerDay: 1, duration: 14)
+
+    ]
     
     var body: some View {
         ZStack {
