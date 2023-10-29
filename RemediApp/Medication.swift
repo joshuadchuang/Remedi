@@ -13,6 +13,9 @@ struct Medication: Identifiable {
     var name: String
     var time: Date
     var dosage: String
+    var startDate: Date
+    var frequencyPerDay: Int
+    var duration: Int // in days
 
     var timeFormatted: String {
         let formatter = DateFormatter()
