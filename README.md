@@ -2,7 +2,7 @@
 
 Remedi Version 1.0 10/29/2023
 
-Remedi is a CalHacks collaboration between Joshua Chuang, Zachary Chuang, Daniel Li, and Albert Su. This mobile app aims to help elderly folk struggling with dementia to remind them when to take their medications and make their lives easier when it comes to manually inputting medication in. Key features include:
+Remedi is a CalHacks collaboration between **Joshua Chuang**, **Zachary Chuang**, **Daniel Li**, and **Albert Su**. This mobile app aims to help elderly folk struggling with dementia to remind them when to take their medications and make their lives easier when it comes to manually inputting medication in. Key features include:
 
 - Using Swift OCR Image to Text to collect needed inputs from taking picture of medication bottle label
 - Utilizing Vapor backened to create Medication model and parse inputs to create array of hashmaps of Dates and Times for scheduling Medications.
