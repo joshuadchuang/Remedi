@@ -40,3 +40,5 @@ struct Medication: Codable {
         return datesTimes
     }
 }
+
+extension Medication: Content {}

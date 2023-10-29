@@ -12,6 +12,18 @@ func routes(_ app: Application) throws {
     // Delete
     app.delete("user", ":uniqueCode", use: userController.deleteUser)
     
+    
+    // Medication routes
+    // Create
+    app.post("user", ":uniqueCode", "medication", use: userController.createMedication)
+    // Read all
+    app.get("user", ":uniqueCode", "medications", use: userController.getAllMedications)
+    // Read for today
+    app.get("user", ":uniqueCode", "medications", "today", use: userController.getMedicationsForToday)
+    // Update
+    app.put("user", ":uniqueCode", "medication", use: userController.updateMedication)
+    // Delete
+    app.delete("user", ":uniqueCode", "medication", use: userController.deleteMedication)
 }
 
 
