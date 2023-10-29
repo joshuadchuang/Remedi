@@ -13,10 +13,5 @@ struct Medication: Identifiable {
     var name: String
     var time: Date
     var dosage: String
-
-    var timeFormatted: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        return formatter.string(from: time)
-    }
+    
 }

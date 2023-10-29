@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7462DF9E2AEE5E2C00002452 /* UserViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7462DF9D2AEE5E2C00002452 /* UserViewTest.swift */; };
+		7462DFA02AEE5E7D00002452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7462DF9F2AEE5E7D00002452 /* User.swift */; };
 		D9A564792AED83AD0020E79E /* Medication Input Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A564782AED83AD0020E79E /* Medication Input Form.swift */; };
 		D9A5647D2AED92190020E79E /* CamInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5647C2AED92190020E79E /* CamInputForm.swift */; };
 		D9E72DEE2AEC905000FC0E7C /* RemediAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72DED2AEC905000FC0E7C /* RemediAppApp.swift */; };
 		D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72DEF2AEC905000FC0E7C /* ContentView.swift */; };
 		D9E72DF22AEC905100FC0E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E72DF12AEC905100FC0E7C /* Assets.xcassets */; };
 		D9E72DF52AEC905100FC0E7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E72DF42AEC905100FC0E7C /* Preview Assets.xcassets */; };
-		D9E72E012AEC949200FC0E7C /* MedicationInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E002AEC949200FC0E7C /* MedicationInputForm.swift */; };
-		D9E72E032AEC949D00FC0E7C /* MedicationListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E022AEC949D00FC0E7C /* MedicationListPage.swift */; };
-		D9E72E052AEC94A900FC0E7C /* MedicationDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E042AEC94A900FC0E7C /* MedicationDetailsPage.swift */; };
 		D9E72E142AED765200FC0E7C /* UserHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E132AED765200FC0E7C /* UserHomeView.swift */; };
 		D9E72E162AED767C00FC0E7C /* CaretakerHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E152AED767C00FC0E7C /* CaretakerHomeView.swift */; };
 		D9E72E182AED79A000FC0E7C /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E72E172AED79A000FC0E7C /* Medication.swift */; };
@@ -29,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7462DF9D2AEE5E2C00002452 /* UserViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewTest.swift; sourceTree = "<group>"; };
+		7462DF9F2AEE5E7D00002452 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D9A564782AED83AD0020E79E /* Medication Input Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medication Input Form.swift"; sourceTree = "<group>"; };
 		D9A5647C2AED92190020E79E /* CamInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamInputForm.swift; sourceTree = "<group>"; };
 		D9E72DEA2AEC905000FC0E7C /* RemediApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemediApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,9 +37,6 @@
 		D9E72DEF2AEC905000FC0E7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9E72DF12AEC905100FC0E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E72DF42AEC905100FC0E7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D9E72E002AEC949200FC0E7C /* MedicationInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationInputForm.swift; sourceTree = "<group>"; };
-		D9E72E022AEC949D00FC0E7C /* MedicationListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationListPage.swift; sourceTree = "<group>"; };
-		D9E72E042AEC94A900FC0E7C /* MedicationDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationDetailsPage.swift; sourceTree = "<group>"; };
 		D9E72E132AED765200FC0E7C /* UserHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeView.swift; sourceTree = "<group>"; };
 		D9E72E152AED767C00FC0E7C /* CaretakerHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaretakerHomeView.swift; sourceTree = "<group>"; };
 		D9E72E172AED79A000FC0E7C /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
@@ -66,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E72DEC2AEC905000FC0E7C /* RemediApp */,
+				7462DF9D2AEE5E2C00002452 /* UserViewTest.swift */,
 				D9E72DEB2AEC905000FC0E7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,9 +85,7 @@
 				D9E72DF12AEC905100FC0E7C /* Assets.xcassets */,
 				D9E72DF32AEC905100FC0E7C /* Preview Content */,
 				D9E72E172AED79A000FC0E7C /* Medication.swift */,
-				D9E72E002AEC949200FC0E7C /* MedicationInputForm.swift */,
-				D9E72E022AEC949D00FC0E7C /* MedicationListPage.swift */,
-				D9E72E042AEC94A900FC0E7C /* MedicationDetailsPage.swift */,
+				7462DF9F2AEE5E7D00002452 /* User.swift */,
 			);
 			path = RemediApp;
 			sourceTree = "<group>";
@@ -210,14 +207,13 @@
 				D9E72E142AED765200FC0E7C /* UserHomeView.swift in Sources */,
 				D9E72E162AED767C00FC0E7C /* CaretakerHomeView.swift in Sources */,
 				D9E72E1C2AED7A3D00FC0E7C /* AddMedicationView.swift in Sources */,
+				7462DFA02AEE5E7D00002452 /* User.swift in Sources */,
 				D9E72E242AED7DD900FC0E7C /* AppViewModel.swift in Sources */,
 				D9E72DF02AEC905000FC0E7C /* ContentView.swift in Sources */,
 				D9E72E182AED79A000FC0E7C /* Medication.swift in Sources */,
+				7462DF9E2AEE5E2C00002452 /* UserViewTest.swift in Sources */,
 				D9A564792AED83AD0020E79E /* Medication Input Form.swift in Sources */,
 				D9E72E1E2AED7A5300FC0E7C /* ListMedicationView.swift in Sources */,
-				D9E72E012AEC949200FC0E7C /* MedicationInputForm.swift in Sources */,
-				D9E72E032AEC949D00FC0E7C /* MedicationListPage.swift in Sources */,
-				D9E72E052AEC94A900FC0E7C /* MedicationDetailsPage.swift in Sources */,
 				D9E72E202AED7A5D00FC0E7C /* ProfileView.swift in Sources */,
 				D9A5647D2AED92190020E79E /* CamInputForm.swift in Sources */,
 				D9E72DEE2AEC905000FC0E7C /* RemediAppApp.swift in Sources */,
