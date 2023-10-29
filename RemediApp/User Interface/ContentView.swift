@@ -31,30 +31,42 @@ struct ContentView: View {
                                 endPoint:.bottomTrailing))
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 220, height: 220)
-                            .padding(.top)
+                            .padding(.top, 70)
                     }
                     
                     Spacer()
                     
                     NavigationLink(destination: UserHomeView().environmentObject(viewModel)) {
                         Text("I am the User")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, maxHeight: 50)
-                            .foregroundStyle(LinearGradient(gradient:
-                                Gradient(colors: [Color(""), Color("")]),
-                                startPoint: .topLeading,
-                                endPoint:.bottomTrailing))
+                            .frame(width: 280, height: 50)
+                            .background(LinearGradient(gradient:
+                                    Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                                    startPoint: .topLeading,
+                                    endPoint:.bottomTrailing))
+                            .foregroundStyle(Color(.white))
+                            .font(.system(size: 20, weight: .medium, design: .default))
                             .cornerRadius(10)
-                            .padding(.horizontal)
+                            .padding()
+                            //.foregroundColor(.white)
+                            //.frame(maxWidth: .infinity, maxHeight: 50)
+                            //.cornerRadius(10)
                     }
                     
                     NavigationLink(destination: CaretakerHomeView()) {
                         Text("I am the Caretaker")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, maxHeight: 50)
-                            .background(Color.green)
+                            .frame(width: 280, height: 50)
+                            .background(LinearGradient(gradient:
+                                    Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                                    startPoint: .topLeading,
+                                    endPoint:.bottomTrailing))
+                            .foregroundStyle(Color(.white))
+                            .font(.system(size: 20, weight: .medium, design: .default))
                             .cornerRadius(10)
-                            .padding(.horizontal)
+//                            .foregroundColor(.white)
+//                            .frame(maxWidth: .infinity, maxHeight: 50)
+//                            .background(Color.green)
+//                            .cornerRadius(10)
+//                            .padding(.horizontal)
                     }
                     Spacer()
                 }
