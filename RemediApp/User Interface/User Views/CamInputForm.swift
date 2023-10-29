@@ -15,50 +15,75 @@ struct CamInputForm: View {
     @State private var showLibraryPicker = false
     
     var body: some View {
-        VStack {
-            if let image = image {
-                Image(uiImage: image)
+        
+        ZStack {
+            BackgroundView()
+                VStack {
+                    Image(systemName: "camera.on.rectangle")
+                        .symbolRenderingMode(.palette)
                         .resizable()
-                        .scaledToFit()
-                Text(recognizeText(in: image))
+                        .foregroundStyle(LinearGradient(gradient:
+                            Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                            startPoint: .topLeading,
+                            endPoint:.bottomTrailing))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 220, height: 220)
+                        .padding(.top, 140)
+                    
+                    Spacer()
+                    
+                    if let image = image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                        Text(recognizeText(in: image))
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                    }
+                    Button(action: { self.showCameraPicker.toggle() }) {
+                        HStack {
+                            Image(systemName: "camera")
+                                .foregroundColor(.white)
+                            
+                            Text("Take Photo")
+                                .foregroundColor(.white)
+                        }
                         .padding()
-                        .background(Color.white)
+                        .background(LinearGradient(gradient:
+                            Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                            startPoint: .topLeading,
+                            endPoint:.bottomTrailing))
                         .cornerRadius(10)
-            }
-            Button(action: { self.showCameraPicker.toggle() }) {
-                HStack {
-                    Image(systemName: "camera")
-                        .foregroundColor(.white)
+                    }
+                    .padding()
+                    .sheet(isPresented: $showCameraPicker) {
+                        ImagePicker(image: self.$image, sourceType: .camera)
+                    }
                     
-                    Text("Take Photo")
-                        .foregroundColor(.white)
+                    Button(action: { self.showLibraryPicker.toggle() }) {
+                        HStack {
+                            Image(systemName: "photo")
+                                .foregroundColor(.white)
+                            
+                            Text("Choose from photo library")
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .background(LinearGradient(gradient:
+                            Gradient(colors: [Color("OceanBlue"), Color("GrassGreen")]),
+                            startPoint: .topLeading,
+                            endPoint:.bottomTrailing))
+                        .cornerRadius(10)
+                    }
+                    .padding()
+                    .sheet(isPresented: $showLibraryPicker) {
+                        ImagePicker(image: self.$image, sourceType: .photoLibrary)
+                    }
                 }
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(10)
-            }
-            .sheet(isPresented: $showCameraPicker) {
-                ImagePicker(image: self.$image, sourceType: .camera)
-            }
-            
-            Button(action: { self.showLibraryPicker.toggle() }) {
-                HStack {
-                    Image(systemName: "photo")
-                        .foregroundColor(.white)
-                    
-                    Text("Choose from photo library")
-                        .foregroundColor(.white)
-                }
-                .padding()
-                .background(Color.blue)
-                .cornerRadius(10)
-            }
-            .sheet(isPresented: $showLibraryPicker) {
-                ImagePicker(image: self.$image, sourceType: .photoLibrary)
             }
         }
     }
-}
 
 // This function uses the VNRecognizeTextRequest class to recognize text in an image
 /*func recognizeText(in image: UIImage) -> String {

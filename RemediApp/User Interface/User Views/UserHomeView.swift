@@ -42,7 +42,7 @@ struct UserHomeView: View {
                     NavigationLink(destination: ListMedicationView()) {
                         Rectangle()
                             .frame(width: 75, height: 75)
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                             .background(Color.blue)
                             .cornerRadius(15)
                             .overlay(Image(systemName: "list.bullet")
